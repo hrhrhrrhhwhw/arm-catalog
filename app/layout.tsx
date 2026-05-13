@@ -1,15 +1,12 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Mulish } from 'next/font/google'
+import './globals.css'
+import { Providers } from './StoreProvider'
+import { cn } from '@/lib/utils'
+import Header from '@/components/Header/header-client'
+import { Toaster } from 'sonner'
+import { ThemeProvider } from '@/components/theme-provider'
 
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
-
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+const mulish = Mulish({ subsets: ['latin'], variable: '--font-sans' })
 
 export default function RootLayout({
   children,
@@ -17,13 +14,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
-    >
+    <html lang="ru" suppressHydrationWarning className={cn('antialiased', 'font-sans', mulish.variable)}>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange enableSystem>
+          <Providers>
+            <Toaster />
+            <Header />
+            <main>{children}</main>
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   )

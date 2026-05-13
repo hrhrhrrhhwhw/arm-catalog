@@ -1,0 +1,229 @@
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Size {
+  XXS
+  XS
+  S
+  M
+  L
+  ONESIZE
+}
+
+enum PaymentStatus {
+  CREATED
+  PENDING
+  SUCCESS
+  FAILED
+  REFUNDED
+}
+
+enum OrderStatus {
+  CREATED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+model Product {
+  id            Int           @id @default(autoincrement())
+
+  sku           String        @unique
+  name          String
+  slug          String        @unique
+
+  price         Int
+  oldPrice      Int?
+
+  images        Image[]
+  sizes         ProductSize[]
+  cartItems     CartItem[]
+  bookmarkItems BookmarkItem[]
+  orderItems    OrderItem[]
+  
+  categoryId  Int
+  category    Category @relation(fields: [categoryId], references: [id])
+
+  colorId       Int
+  color         Color         @relation(fields: [colorId], references: [id])
+
+  composition   String?
+  sizeOnModel   String?
+  heightOnModel String?
+  country       String?
+
+  description   String?
+  delivery      String?
+  refund        String?
+  care          String?
+
+  isActive      Boolean       @default(true)
+
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([price])
+  @@index([createdAt])
+  @@index([isActive])
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  slug  String @unique
+
+  products Product[]
+}
+
+model Image {
+  id        Int     @id @default(autoincrement())
+  url       String
+
+  productId Int
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  position  Int     @default(0)
+
+  @@index([productId])
+}
+
+model ProductSize {
+  id        Int     @id @default(autoincrement())
+
+  size      Size
+  stock     Int
+
+  productId Int
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, size])
+
+  @@index([productId])
+  @@index([size])
+}
+
+model Color {
+  id    Int    @id @default(autoincrement())
+  name  String
+  hex   String
+
+  products Product[]
+
+  @@unique([name])
+}
+
+model Cart {
+  id        Int        @id @default(autoincrement())
+
+  token     String    @unique
+  items     CartItem[]
+  
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model CartItem {
+  id        Int     @id @default(autoincrement())
+
+  cartId    Int
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+
+  size      Size
+
+  quantity Int @default(1)
+
+  @@unique([cartId, productId, size])
+
+  @@index([cartId])
+  @@index([productId])
+}
+
+model Bookmark {
+  id        Int             @id @default(autoincrement())
+
+  token     String @unique
+  userId    String?
+  items     BookmarkItem[]
+
+  createdAt DateTime        @default(now())
+
+  @@index([token])
+}
+
+model BookmarkItem {
+  id         Int     @id @default(autoincrement())
+
+  bookmarkId Int
+  bookmark   Bookmark @relation(fields: [bookmarkId], references: [id], onDelete: Cascade)
+
+  productId  Int
+  product    Product  @relation(fields: [productId], references: [id])
+
+  @@unique([bookmarkId, productId])
+
+  @@index([productId])
+}
+
+model Order {
+  id            Int            @id @default(autoincrement())
+
+  token         String    @unique
+
+  items         OrderItem[]
+  payment       Payment?
+
+  totalAmount   Int
+
+  status        OrderStatus    @default(CREATED)
+
+  createdAt     DateTime       @default(now())
+
+  @@index([status])
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+
+  size      Size
+
+  price     Int
+  quantity  Int
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Payment {
+  id        Int           @id @default(autoincrement())
+
+  orderId   Int           @unique
+  order     Order         @relation(fields: [orderId], references: [id])
+
+  status    PaymentStatus
+
+  provider  String?
+  amount    Int
+
+  createdAt DateTime      @default(now())
+
+  @@index([status])
+}
+
