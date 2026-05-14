@@ -32,9 +32,9 @@ export async function GET() {
   })
 
   return NextResponse.json(
-    bookmark?.items.map((i) => ({
+    bookmark?.items.map((i: any) => ({
       ...i.product,
-      images: i.product.images.map((img) => img.url),
+      images: i.product.images.map((img: any) => img.url),
     })) ?? []
   )
 }
@@ -99,9 +99,9 @@ export async function POST(req: NextRequest) {
       },
     })
 
-    const items = bookmarkItems.map((item) => ({
+    const items = bookmarkItems.map((item: any) => ({
       ...item.product,
-      images: item.product.images.map((img) => img.url),
+      images: item.product.images.map((img: any) => img.url),
     }))
 
     return NextResponse.json(items)
