@@ -44,7 +44,7 @@ export async function GET() {
   })
 
   return NextResponse.json(
-    cart?.items.map((item) => ({
+    cart?.items.map((item:any) => ({
       id: item.product.id,
       name: item.product.name,
       slug: item.product.slug,
