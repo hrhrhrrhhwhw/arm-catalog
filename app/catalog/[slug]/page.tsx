@@ -4,6 +4,7 @@ import FilterColor from '@/components/Filters/filter-color'
 import FilterPrice from '@/components/Filters/price-filter'
 import getCatalogProducts from '@/lib/actions/get-catalog-products'
 import { getCategory } from '@/lib/actions/get-category'
+import { ProductCard } from '@/lib/types'
 
 export default async function ProductCatalogPage({
   params,
@@ -30,7 +31,7 @@ export default async function ProductCatalogPage({
         <FilterPrice />
       </div>
       <div className="mt-7 grid grid-cols-2 gap-x-1 gap-y-15 md:grid-cols-4 lg:grid-cols-4">
-        {products.map((p) => (
+        {products.map((p:ProductCard) => (
           <ProductCatalogCard key={p.id} product={p} />
         ))}
       </div>
