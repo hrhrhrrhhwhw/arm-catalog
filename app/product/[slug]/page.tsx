@@ -6,6 +6,7 @@ import ProductGallery from '@/components/Product/product-gallery'
 import ProductInfo from '@/components/Product/product-info'
 import YouMayLike from '@/components/you-may-like'
 import getProduct from '@/lib/actions/get-product'
+import { SizeOption } from '@/lib/types'
 import { notFound } from 'next/navigation'
 
 interface ProductProps {
@@ -39,7 +40,7 @@ export default async function ProductPage({ params }: ProductProps) {
             price={product.price}
             oldPrice={product.oldPrice}
             color={product.color}
-            sizes={product.sizes.map((s) => ({
+            sizes={product.sizes.map((s: SizeOption) => ({
               value: s.size,
               stock: s.stock,
             }))}
