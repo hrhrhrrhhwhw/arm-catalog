@@ -1,4 +1,4 @@
-import { ProductCard } from '@/lib/types/types'
+import { ProductCard } from '@/lib/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const bookmarksApi = createApi({

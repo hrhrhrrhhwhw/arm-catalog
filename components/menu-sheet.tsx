@@ -17,9 +17,8 @@ import { useGetCategoriesQuery } from '@/services/categories'
 import { Category } from '@/app/generated/prisma/client'
 
 export default function MenuSheet() {
-  const { data, isLoading, isError } = useGetCategoriesQuery()
+  const { data = [], isLoading, isError } = useGetCategoriesQuery()
 
-  const categories = data?.categories || []
 
   if (isLoading) {
     return <Loading />
@@ -37,7 +36,7 @@ export default function MenuSheet() {
       <SheetContent showCloseButton={false} side="left" className="max-w-full p-4">
         <div className="my-2 overflow-y-scroll">
           <div className="flex flex-col gap-4 pl-4">
-            {categories.map((category: Category) => (
+            {data.map((category: Category) => (
               <SheetClose asChild key={category.id}>
                 <Link
                   href={`/catalog/${category.slug.toLowerCase()}`}

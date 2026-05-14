@@ -1,4 +1,5 @@
-import { CartItem } from '@/lib/types/types'
+
+import { CartItem } from '@/lib/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export type CartResponse = CartItem[]
@@ -26,11 +27,7 @@ export const cartApi = createApi({
           name: string
           slug: string
           price: number
-          oldPrice: number | null
           image: string
-          color: {
-            hex: string
-          }
         }
         size: string
       }
@@ -57,9 +54,7 @@ export const cartApi = createApi({
                 name: product.name,
                 slug: product.slug,
                 price: product.price,
-                oldPrice: product.oldPrice,
                 image: product.image,
-                color: product.color,
                 quantity: 1,
                 size,
               })

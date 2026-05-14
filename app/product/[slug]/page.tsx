@@ -33,8 +33,9 @@ export default async function ProductPage({ params }: ProductProps) {
         <div className="sticky top-24 flex flex-col gap-4 px-4">
           <ProductInfo
             id={product.id}
-            sku={product.sku}
             name={product.name}
+            slug={product.slug}
+            images={product.images}
             price={product.price}
             oldPrice={product.oldPrice}
             color={product.color}

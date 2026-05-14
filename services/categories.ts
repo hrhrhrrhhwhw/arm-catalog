@@ -1,4 +1,4 @@
-import { Categories } from '@/lib/types/types'
+import { Category } from '@/app/generated/prisma/client'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const categoriesApi = createApi({
@@ -8,10 +8,8 @@ export const categoriesApi = createApi({
   }),
   tagTypes: ['Category'],
   endpoints: (builder) => ({
-    getCategories: builder.query<Categories, void>({
+    getCategories: builder.query<Category[], void>({
       query: () => '/api/category',
-      keepUnusedDataFor: 300,
-      providesTags: ['Category'],
     }),
   }),
 })

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Toggle } from './ui/toggle'
 import { BookmarkIcon } from 'lucide-react'
-import { ProductCard } from '@/lib/types/types'
+import { ProductCard } from '@/lib/types'
 import { useRef, useState } from 'react'
 import { useGetBookmarksQuery, useToggleBookmarkMutation } from '@/services/bookmarks'
 

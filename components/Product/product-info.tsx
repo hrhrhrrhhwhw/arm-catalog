@@ -22,7 +22,6 @@ interface ProductInfoProps {
     name: string
     hex: string
   }
-  quantity: number
   sizes: {
     value: string
     stock: number
@@ -47,11 +46,7 @@ export default function ProductInfo({ id, name, slug, price, oldPrice, images, c
           name,
           slug,
           price,
-          oldPrice,
           image: images?.[0] || '',
-          color: {
-            hex: color.hex,
-          },
         },
         size: selectedSize,
       }).unwrap()

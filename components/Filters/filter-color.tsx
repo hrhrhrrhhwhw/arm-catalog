@@ -12,7 +12,7 @@ import {
 import { useState, useTransition } from 'react'
 import { Spinner } from '@/components/ui/spinner'
 import { ChevronDown } from 'lucide-react'
-import { ProductCard } from '@/lib/types/types'
+import { ProductCard } from '@/lib/types'
 
 type Props = {
   products: ProductCard[]

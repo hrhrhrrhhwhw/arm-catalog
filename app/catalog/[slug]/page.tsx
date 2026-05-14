@@ -18,7 +18,6 @@ export default async function ProductCatalogPage({
   const categoryData = await getCategory(slug)
 
   const products = await getCatalogProducts(slug, color, price)
-  console.log(products, 'это продукты')
 
   return (
     <div className="w-full px-2 pt-5 md:px-4">

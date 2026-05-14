@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { CartItem } from '@/lib/types/types'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { useDecrementItemMutation, useIncrementItemMutation, useRemoveItemMutation } from '@/services/cart'
+import { CartItem } from '@/lib/types'
 
 type Props = {
   item: CartItem
@@ -16,7 +16,7 @@ export default function CartItemCard({ item }: Props) {
   return (
     <div className="flex justify-between gap-2 bg-ring/10">
       <div className="flex w-full gap-2">
-        <Image src={item.image} alt={item.name} width={100} height={150} />
+        <Image src={item.image} alt={item.name} width={120} height={150} />
 
         <div className="flex w-full flex-col justify-between p-2">
           <div>
@@ -27,7 +27,7 @@ export default function CartItemCard({ item }: Props) {
             <span className="text-sm text-muted-foreground">Размер: {item.size}</span>
           </div>
 
-          <span>{item.price} ₽</span>
+          <span className="mb-5">{item.price} ₽</span>
 
           <div className="flex w-full justify-between">
             <div className="flex items-center gap-5">

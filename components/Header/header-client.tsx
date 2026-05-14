@@ -15,7 +15,7 @@ export default function Header() {
       <div className="flex gap-5">
         <ToggleTheme />
         <HeaderBookMarksButton />
-        <HeaderCartButton count={0} />
+        <HeaderCartButton />
       </div>
     </div>
   )

@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+@import 'react-dadata/dist/react-dadata.css';
+
+
+:root.dark-theme .react-dadata__suggestions,
+.dark .react-dadata__suggestions {
+    background-color: var(--sidebar);  /* темный фон выпадающего списка */
+}
+
 
 @custom-variant dark (&:is(.dark *));
 
