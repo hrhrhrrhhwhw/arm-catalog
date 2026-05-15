@@ -1,6 +1,7 @@
 import { createToken, getToken } from '@/lib/actions/get-create-token'
 import prisma from '@/lib/prisma'
 import { NextResponse } from 'next/server'
+import { CartItemResponse } from '@/lib/types'
 
 export async function GET() {
   let token = await getToken()
@@ -27,7 +28,9 @@ export async function GET() {
                   url: true,
                 },
               },
+
               price: true,
+
               sizes: {
                 select: {
                   size: true,
@@ -41,8 +44,8 @@ export async function GET() {
     },
   })
 
-  return NextResponse.json(
-    cart?.items.map((item) => ({
+  const items: CartItemResponse[] =
+    cart?.items.map((item:any) => ({
       id: item.product.id,
       name: item.product.name,
       slug: item.product.slug,
@@ -50,9 +53,10 @@ export async function GET() {
       image: item.product.images[0]?.url || '',
       quantity: item.quantity,
       size: item.size,
-      stock: item.product.sizes.find((s) => s.size === item.size)?.stock || 0,
+      stock: item.product.sizes.find((s:any) => s.size === item.size)?.stock || 0,
     })) ?? []
-  )
+
+  return NextResponse.json<CartItemResponse[]>(items)
 }
 
 export async function POST(req: Request) {

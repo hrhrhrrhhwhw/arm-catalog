@@ -24,7 +24,7 @@ export type Product = {
   price: number
   oldPrice: number | null
   images: string[]
-  sizes: SizeOption
+  sizes: SizeOption[]
   color: Color
   composition: string
   sizeOnModel: string
