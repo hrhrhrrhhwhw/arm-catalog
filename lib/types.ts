@@ -1,3 +1,5 @@
+import { Size } from '@/app/generated/prisma/client'
+
 export type Color = {
   id: number
   name: string
@@ -68,11 +70,3 @@ export type CartItemResponse = {
   stock: number
 }
 
-export enum Size {
-  XXS = 'XXS',
-  XS = 'XS',
-  S = 'S',
-  M = 'M',
-  L = 'L',
-  ONESIZE = 'ONESIZE',
-}
