@@ -40,8 +40,8 @@ export default async function getYouMayLike(categorySlug: string, productId: num
     },
   })
 
-  return products.map((p) => ({
+  return products.map((p:any) => ({
     ...p,
-    images: p.images.map((img) => img.url),
+    images: p.images.map((img:any) => img.url),
   }))
 }

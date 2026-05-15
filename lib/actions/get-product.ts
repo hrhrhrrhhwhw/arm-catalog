@@ -49,6 +49,6 @@ export default async function getProduct(slug?: string) {
 
   return {
     ...product,
-    images: product.images.map((img) => img.url),
+    images: product.images.map((img:any) => img.url),
   }
 }

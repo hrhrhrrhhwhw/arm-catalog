@@ -1,5 +1,6 @@
 import { cache } from 'react'
 import prisma from '../prisma'
+import { ProductCard } from '../types'
 
 type SortPrice = 'price_asc' | 'price_desc'
 
@@ -62,11 +63,13 @@ export const getCatalogProducts = cache(async (category?: string, color?: string
       },
     },
   })
-  
-  return products.map((p) => ({
+
+  const mappedProducts: ProductCard[] = products.map((p:any) => ({
     ...p,
-    images: p.images.map((img) => img.url),
+    images: p.images.map((img: { url: string }) => img.url),
   }))
+
+  return mappedProducts
 })
 
 export default getCatalogProducts
