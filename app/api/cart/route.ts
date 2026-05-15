@@ -21,21 +21,19 @@ export async function GET() {
               name: true,
               slug: true,
 
-              color: {
-                select: {
-                  hex: true,
-                },
-              },
-
               images: {
                 take: 1,
                 select: {
                   url: true,
                 },
               },
-
               price: true,
-              oldPrice: true,
+              sizes: {
+                select: {
+                  size: true,
+                  stock: true,
+                },
+              },
             },
           },
         },
@@ -44,16 +42,15 @@ export async function GET() {
   })
 
   return NextResponse.json(
-    cart?.items.map((item:any) => ({
+    cart?.items.map((item) => ({
       id: item.product.id,
       name: item.product.name,
       slug: item.product.slug,
       price: item.product.price,
-      oldPrice: item.product.oldPrice,
-      color: item.product.color,
       image: item.product.images[0]?.url || '',
       quantity: item.quantity,
       size: item.size,
+      stock: item.product.sizes.find((s) => s.size === item.size)?.stock || 0,
     })) ?? []
   )
 }

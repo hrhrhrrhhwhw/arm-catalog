@@ -62,13 +62,10 @@ export const getCatalogProducts = cache(async (category?: string, color?: string
       },
     },
   })
-
-  // const categoryInfo = products[0]?.category || null
-
+  
   return products.map((p) => ({
     ...p,
     images: p.images.map((img) => img.url),
-    // category: categoryInfo,
   }))
 })
 

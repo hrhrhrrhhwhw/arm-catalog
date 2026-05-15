@@ -13,7 +13,6 @@ export default function CartPage() {
   }, 0)
 
   if (isLoading) return <Loading />
-  console.log(cart)
 
   return (
     <div className="w-full md:px-4">

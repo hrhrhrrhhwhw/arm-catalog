@@ -47,6 +47,7 @@ export default function ProductInfo({ id, name, slug, price, oldPrice, images, c
           slug,
           price,
           image: images?.[0] || '',
+          stock: selectedSizeData?.stock || 0,
         },
         size: selectedSize,
       }).unwrap()
@@ -62,6 +63,10 @@ export default function ProductInfo({ id, name, slug, price, oldPrice, images, c
       console.error(e)
     }
   }
+
+  const selectedSizeData = sizes.find((s) => s.value === selectedSize)
+
+  const isMaxStockReached = !!cartItem && !!selectedSizeData && cartItem.quantity >= selectedSizeData.stock
 
   return (
     <div>
@@ -98,6 +103,18 @@ export default function ProductInfo({ id, name, slug, price, oldPrice, images, c
             </button>
           ))}
         </div>
+        {selectedSize && (
+          <div className="mt-1 text-xs text-muted-foreground">
+            {(() => {
+              const s = sizes.find((s) => s.value === selectedSize)
+              if (!s) return null
+              if (s.stock === 1) return 'Остался последний'
+              if (s.stock > 1 && s.stock <= 9) return `${s.stock} шт.`
+              if (s.stock >= 10) return 'Больше 10'
+              return null
+            })()}
+          </div>
+        )}
       </div>
 
       {cartItem ? (
@@ -125,6 +142,7 @@ export default function ProductInfo({ id, name, slug, price, oldPrice, images, c
             className="w-10"
             size="lg"
             variant="outline"
+            disabled={isMaxStockReached}
             onClick={() =>
               incrementItem({
                 productId: cartItem.id,
@@ -135,7 +153,7 @@ export default function ProductInfo({ id, name, slug, price, oldPrice, images, c
           </Button>
         </div>
       ) : (
-        <Button size="lg" onClick={handleAddToCart} disabled={!selectedSize || isLoading} className="h-11 w-full">
+        <Button size="lg" onClick={handleAddToCart}  className="h-11 w-full">
           {isLoading ? 'Добавление...' : 'Добавить в корзину'}
         </Button>
       )}

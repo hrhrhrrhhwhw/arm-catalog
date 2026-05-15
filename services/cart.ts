@@ -1,8 +1,9 @@
 
-import { CartItem } from '@/lib/types'
+import { CartItemResponse } from '@/lib/types'
+
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export type CartResponse = CartItem[]
+export type CartResponse = CartItemResponse[]
 
 export const cartApi = createApi({
   reducerPath: 'cartApi',
@@ -28,6 +29,7 @@ export const cartApi = createApi({
           slug: string
           price: number
           image: string
+          stock: number
         }
         size: string
       }
@@ -56,6 +58,7 @@ export const cartApi = createApi({
                 price: product.price,
                 image: product.image,
                 quantity: 1,
+                stock: product.stock,
                 size,
               })
             }

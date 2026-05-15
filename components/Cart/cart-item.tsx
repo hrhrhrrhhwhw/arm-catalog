@@ -2,16 +2,19 @@ import Image from 'next/image'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { useDecrementItemMutation, useIncrementItemMutation, useRemoveItemMutation } from '@/services/cart'
-import { CartItem } from '@/lib/types'
+import { CartItemResponse } from '@/lib/types'
 
 type Props = {
-  item: CartItem
+  item: CartItemResponse
 }
 
 export default function CartItemCard({ item }: Props) {
   const [incrementItem] = useIncrementItemMutation()
   const [decrementItem] = useDecrementItemMutation()
   const [removeItem] = useRemoveItemMutation()
+
+  const isMaxStockReached = item.quantity >= item.stock
+  const isMinQuantityReached = item.quantity <= 1
 
   return (
     <div className="flex justify-between gap-2 bg-ring/10">
@@ -25,6 +28,7 @@ export default function CartItemCard({ item }: Props) {
             </Link>
 
             <span className="text-sm text-muted-foreground">Размер: {item.size}</span>
+
           </div>
 
           <span className="mb-5">{item.price} ₽</span>
@@ -32,22 +36,42 @@ export default function CartItemCard({ item }: Props) {
           <div className="flex w-full justify-between">
             <div className="flex items-center gap-5">
               <Button
-                onClick={() => decrementItem({ productId: item.id, size: item.size })}
+                disabled={isMinQuantityReached}
+                onClick={() =>
+                  decrementItem({
+                    productId: item.id,
+                    size: item.size,
+                  })
+                }
                 variant="outline"
                 size="lg">
                 -
               </Button>
+
               <div>{item.quantity}</div>
+
               <Button
-                onClick={() => incrementItem({ productId: item.id, size: item.size })}
+                disabled={isMaxStockReached}
+                onClick={() =>
+                  incrementItem({
+                    productId: item.id,
+                    size: item.size,
+                  })
+                }
                 variant="outline"
                 size="lg">
                 +
               </Button>
             </div>
+                {isMaxStockReached && <div className="mt-1 text-xs text-destructive">Больше нет</div>}
             <div>
               <Button
-                onClick={() => removeItem({ productId: item.id, size: item.size })}
+                onClick={() =>
+                  removeItem({
+                    productId: item.id,
+                    size: item.size,
+                  })
+                }
                 variant="destructive"
                 size="lg">
                 удалить

@@ -22,7 +22,7 @@ export type Product = {
   category: string
   slug: string
   price: number
-  oldPrice?: number
+  oldPrice: number | null
   images: string[]
   sizes: SizeOption
   color: Color
@@ -42,7 +42,7 @@ export type ProductCard = {
   slug: string
   category: { name: string; slug: string }
   price: number
-  oldPrice?: number | null
+  oldPrice: number | null
   color: { name: string; hex: string }
   images: string[]
 }
@@ -53,12 +53,19 @@ export type CartItem = {
   slug: string
   image: string
   price: number
-  oldPrice: number | null
   quantity: number
   size: string
-  color: {
-    hex: string
-  }
+}
+
+export type CartItemResponse = {
+  id: number
+  name: string
+  slug: string
+  image: string
+  price: number
+  quantity: number
+  size: string
+  stock: number
 }
 
 export enum Size {
