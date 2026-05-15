@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="flex flex-col justify-start md:gap-10">
         <h1 className="text-8xl font-semibold">SPRING</h1>
         <p className="text-8xl font-semibold">2026</p>
-        <Link href="/catalog">
+        <Link href="/catalog/dress">
           <Button className="h-11 cursor-pointer text-base" variant="default">
             SHOP NOW
           </Button>
