@@ -15,18 +15,21 @@ export default function CartPage() {
   if (isLoading) return <Loading />
 
   return (
-    <div className="w-full md:px-4">
+    <div className="w-full px-4">
       <h2 className="mb-5 px-2 text-xl font-semibold text-primary md:text-2xl">Корзина</h2>
-      <div className="mb-5">
+      <div className="mb-5 px-2">
         Сумма заказа: <span className="text-lg font-bold text-primary">{total.toLocaleString('ru-RU')}</span> рублей
       </div>
       <div className="flex flex-col gap-4 md:flex-row">
-        <div className="flex flex-col gap-2 max-h-130 md:w-1/2 md:overflow-y-auto md:pr-2">
+        <div className="flex w-full flex-col gap-2 md:max-h-[700px] md:w-1/2 md:overflow-y-auto">
           {cart.map((c) => (
             <CartItemCard key={`${c.id}-${c.size}`} item={c} />
           ))}
         </div>
-        <Order />
+
+        <div className="w-full md:w-1/2">
+          <Order />
+        </div>
       </div>
     </div>
   )

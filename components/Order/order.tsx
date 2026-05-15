@@ -31,7 +31,7 @@ export default function Order() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 px-4 w-1/2">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-5">
       <FieldSet>
         <FieldLegend>Ваш заказ</FieldLegend>
         <FieldDescription>Заполните все поля для доставки товаров</FieldDescription>
