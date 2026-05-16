@@ -48,7 +48,7 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
               src={src}
               alt={`${name} ${i + 1}`}
               fill
-              priority={false}
+              priority
               loading="lazy"
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"

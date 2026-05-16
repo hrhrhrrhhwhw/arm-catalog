@@ -19,7 +19,6 @@ import { Category } from '@/app/generated/prisma/client'
 export default function MenuSheet() {
   const { data = [], isLoading, isError } = useGetCategoriesQuery()
 
-
   if (isLoading) {
     return <Loading />
   }
@@ -39,6 +38,7 @@ export default function MenuSheet() {
             {data.map((category: Category) => (
               <SheetClose asChild key={category.id}>
                 <Link
+                  prefetch
                   href={`/catalog/${category.slug.toLowerCase()}`}
                   key={category.id}
                   className="text-xl text-primary hover:text-chart-5">
