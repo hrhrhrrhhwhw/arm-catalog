@@ -3,7 +3,7 @@
 // 2 цифры - номер товара из 4 цифр начиная с 0001
 // итого: 10001 - джинсы первый товар
 
-import { Size } from "./generated/prisma/enums"
+import { Size } from './generated/prisma/enums'
 
 // платья 10001
 // джинсы 20001
@@ -17,7 +17,6 @@ import { Size } from "./generated/prisma/enums"
 // сумки и аксессуары 100001
 // юбки 110001
 // купальники 120001
-
 
 export const colors = [
   { id: 1, name: 'Чёрный', hex: '#000000' },
@@ -62,10 +61,10 @@ export const products = [
     price: 1100,
     oldPrice: 2100,
     images: [
-      '/images/dress-10001-1.webp',
-      '/images/dress-10001-2.webp',
-      '/images/dress-10001-3.webp',
-      '/images/dress-10001-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778921217/dress-10001-1_goq92x.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778921218/dress-10001-2_zna3at.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778921218/dress-10001-3_ebrscs.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778921218/dress-10001-4_d8pe0t.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 10 },
@@ -92,10 +91,10 @@ export const products = [
     price: 2041,
     oldPrice: 7560,
     images: [
-      '/images/dress-10002-1.webp',
-      '/images/dress-10002-2.webp',
-      '/images/dress-10002-3.webp',
-      '/images/dress-10002-2.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922033/dress-10002-1_hnf251.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922033/dress-10002-2_k3smkk.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922034/dress-10002-3_i3eclq.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922034/dress-10002-4_fway9t.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 10 },
@@ -122,10 +121,10 @@ export const products = [
     category: 'jeans',
     price: 4050,
     images: [
-      '/images/jeans-20001.webp',
-      '/images/jeans-20002.webp',
-      '/images/jeans-20003.webp',
-      '/images/jeans-20004.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922125/jeans-20001_vpt5bb.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922125/jeans-20002_raa8yd.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922126/jeans-20003_et9v7p.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922127/jeans-20004_ofguzi.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 10 },
@@ -150,7 +149,10 @@ export const products = [
     name: 'Джинсы Slim Fit',
     category: 'jeans',
     price: 4290,
-    images: ['/images/jeans-20002-1.webp', '/images/jeans-20002-2.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922201/jeans-20002-1_wexje1.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922201/jeans-20002-2_zf2iw4.webp',
+    ],
     sizes: [
       { size: Size.XXS, stock: 5 },
       { size: Size.XS, stock: 8 },
@@ -174,7 +176,10 @@ export const products = [
     name: 'Джинсы Boyfriend',
     category: 'jeans',
     price: 4590,
-    images: ['/images/jeans-20003-1.webp', '/images/jeans-20003-2.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922253/jeans-20003-1_mv2cmk.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922254/jeans-20003-2_hnpg7e.webp',
+    ],
     sizes: [
       { size: Size.XXS, stock: 3 },
       { size: Size.XS, stock: 5 },
@@ -199,10 +204,10 @@ export const products = [
     category: 'jeans',
     price: 4890,
     images: [
-      '/images/jeans-20004-1.webp',
-      '/images/jeans-20004-2.webp',
-      '/images/jeans-20004-3.webp',
-      '/images/jeans-20004-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922287/jeans-20004-1_jf1m9v.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922288/jeans-20004-2_h4h7fj.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922290/jeans-20004-3_vypwoj.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922291/jeans-20004-4_tjb5vc.webp',
     ],
     sizes: [
       { size: Size.XS, stock: 7 },
@@ -227,10 +232,10 @@ export const products = [
     category: 'jeans',
     price: 4350,
     images: [
-      '/images/jeans-gray1.webp',
-      '/images/jeans-gray2.webp',
-      '/images/jeans-gray3.webp',
-      '/images/jeans-gray4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922337/jeans-gray1_ph3j2v.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922337/jeans-gray1_ph3j2v.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922339/jeans-gray3_ywwaze.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922341/jeans-gray4_sgk8mn.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 4 },
@@ -258,10 +263,10 @@ export const products = [
     price: 1490,
     oldPrice: 3499,
     images: [
-      '/images/jeans-embroidery-1.webp',
-      '/images/jeans-embroidery-2.webp',
-      '/images/jeans-embroidery-3.webp',
-      '/images/jeans-embroidery-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922390/jeans-embroidery-1_parpdl.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922390/jeans-embroidery-2_qbihb1.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922390/jeans-embroidery-4_fmqvng.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778922390/jeans-embroidery-3_efiv1o.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 2 },
@@ -287,7 +292,10 @@ export const products = [
     category: 'tops',
     price: 1890,
     oldPrice: 2990,
-    images: ['/images/tops-offshoulder-1.webp', '/images/tops-offshoulder-2.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778923939/tops-offshoulder-1_cvfh6k.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778923940/tops-offshoulder-2_utzpng.webp',
+    ],
     sizes: [
       { size: Size.XXS, stock: 5 },
       { size: Size.XS, stock: 8 },
@@ -314,10 +322,10 @@ export const products = [
     price: 1990,
     oldPrice: 3290,
     images: [
-      '/images/longsleeve-print-1.webp',
-      '/images/longsleeve-print-2.webp',
-      '/images/longsleeve-print-3.webp',
-      '/images/longsleeve-print-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778923984/longsleeve-print-1_mrljsn.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778923984/longsleeve-print-2_lyebex.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778923984/longsleeve-print-3_t0i417.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778923984/longsleeve-print-4_n3ganx.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 3 },
@@ -344,10 +352,10 @@ export const products = [
     price: 2290,
     oldPrice: 3990,
     images: [
-      '/images/longsleeve-turtleneck-1.webp',
-      '/images/longsleeve-turtleneck-2.webp',
-      '/images/longsleeve-turtleneck-3.webp',
-      '/images/longsleeve-turtleneck-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924046/longsleeve-turtleneck-1_yctztn.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924047/longsleeve-turtleneck-2_xkhlul.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924047/longsleeve-turtleneck-4_i7cepm.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924047/longsleeve-turtleneck-3_vqblap.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 4 },
@@ -367,6 +375,36 @@ export const products = [
     refund: '14 дней на возврат',
     care: 'Химчистка или деликатная стирка',
   },
+  {
+    sku: '40003',
+    name: 'Лонгслив PRADA',
+    category: 'longsleeves',
+    price: 12290,
+    oldPrice: 23990,
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924251/longsleev-black1_wljpsi.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924251/longsleev-black2_fklein.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924252/longsleev-black3_s4rgek.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924254/longsleev-black4_kkbvi9.webp',
+    ],
+    sizes: [
+      { size: Size.XXS, stock: 10 },
+      { size: Size.XS, stock: 7 },
+      { size: Size.S, stock: 12 },
+      { size: Size.M, stock: 9 },
+      { size: Size.L, stock: 5 },
+    ],
+    color: { id: 1, name: 'Чёрный', hex: '#000000' },
+    composition: 'кашемир 10%; шерсть 50%; полиэстер 40%',
+    sizeOnModel: '36',
+    heightOnModel: '168',
+    country: 'Italy',
+    description:
+      'Элегантный лонгслив с высоким горлом. Теплая и мягкая модель, идеально подходит для холодного сезона. Отлично смотрится с пальто и пиджаками.',
+    delivery: 'Доставка бесплатно',
+    refund: '14 дней на возврат',
+    care: 'Химчистка или деликатная стирка',
+  },
   // нижнее белье
   {
     sku: '50001',
@@ -375,10 +413,10 @@ export const products = [
     price: 1490,
     oldPrice: 2490,
     images: [
-      '/images/bra-lace-1.webp',
-      '/images/bra-lace-2.webp',
-      '/images/bra-lace-3.webp',
-      '/images/bra-lace-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924295/bra-lace-1_f6eu03.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924295/bra-lace-2_surqht.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924296/bra-lace-3_vxow6z.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924298/bra-lace-4_rffuai.webp',
     ],
     sizes: [
       { size: Size.XS, stock: 5 },
@@ -404,10 +442,10 @@ export const products = [
     price: 890,
     oldPrice: 1490,
     images: [
-      '/images/panties-cotton-1.webp',
-      '/images/panties-cotton-2.webp',
-      '/images/panties-cotton-3.webp',
-      '/images/panties-cotton-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924357/panties-cotton-1_qyi412.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924357/panties-cotton-2_f3vc3v.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924358/panties-cotton-3_hrc6yj.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924360/panties-cotton-4_j5iaxv.webp',
     ],
     sizes: [
       { size: Size.XS, stock: 10 },
@@ -434,10 +472,10 @@ export const products = [
     price: 8990,
     oldPrice: 14990,
     images: [
-      '/images/pajamas-silk-1.webp',
-      '/images/pajamas-silk-2.webp',
-      '/images/pajamas-silk-3.webp',
-      '/images/pajamas-silk-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924401/pajamas-silk-1_r7cute.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924401/pajamas-silk-2_jh6rlc.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924402/pajamas-silk-3_appxfw.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924404/pajamas-silk-4_kmu1ki.webp',
     ],
     sizes: [
       { size: Size.XS, stock: 3 },
@@ -462,7 +500,11 @@ export const products = [
     category: 'sleepwear',
     price: 10990,
     oldPrice: 16990,
-    images: ['/images/pajamas-lace-1.webp', '/images/pajamas-lace-2.webp', '/images/pajamas-lace-3.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924457/pajamas-lace-1_ax9ssn.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924457/pajamas-lace-2_vytttl.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924459/pajamas-lace-3_pifzzg.webp',
+    ],
     sizes: [
       { size: Size.XS, stock: 2 },
       { size: Size.S, stock: 4 },
@@ -487,7 +529,11 @@ export const products = [
     category: 'sportwear',
     price: 4990,
     oldPrice: 7990,
-    images: ['/images/sportswear-logo-1.webp', '/images/sportswear-logo-2.webp', '/images/sportswear-logo-3.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924492/sportswear-logo-1_mnlj5d.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924493/sportswear-logo-2_fdar20.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924493/sportswear-logo-2_fdar20.webp',
+    ],
     sizes: [
       { size: Size.XXS, stock: 3 },
       { size: Size.XS, stock: 5 },
@@ -512,7 +558,11 @@ export const products = [
     category: 'sportwear',
     price: 5990,
     oldPrice: 8990,
-    images: ['/images/sportswear-neon-1.webp', '/images/sportswear-neon-2.webp', '/images/sportswear-neon-3.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924538/sportswear-neon-1_i3dvva.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924538/sportswear-neon-2_ffcuz8.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924541/sportswear-neon-3_ktmrwj.webp',
+    ],
     sizes: [
       { size: Size.XS, stock: 4 },
       { size: Size.S, stock: 6 },
@@ -537,7 +587,11 @@ export const products = [
     category: 'coat',
     price: 12990,
     oldPrice: 19990,
-    images: ['/images/coat-wool-1.webp', '/images/coat-wool-2.webp', '/images/coat-wool-3.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924582/coat-wool-1_afgb6y.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924583/coat-wool-2_afmikv.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924585/coat-wool-3_uxr1oy.webp',
+    ],
     sizes: [
       { size: Size.XS, stock: 3 },
       { size: Size.S, stock: 5 },
@@ -562,10 +616,10 @@ export const products = [
     price: 14990,
     oldPrice: 22990,
     images: [
-      '/images/coat-oversize-1.webp',
-      '/images/coat-oversize-2.webp',
-      '/images/coat-oversize-3.webp',
-      '/images/coat-oversize-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924611/coat-oversize-1_ovsq4s.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924612/coat-oversize-2_s345tr.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924614/coat-oversize-3_bbfml6.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924615/coat-oversize-4_eamotk.webp',
     ],
     sizes: [
       { size: Size.XS, stock: 2 },
@@ -591,7 +645,11 @@ export const products = [
     category: 'shoes',
     price: 3990,
     oldPrice: 5990,
-    images: ['/images/shoes-sneakers-1.webp', '/images/shoes-sneakers-2.webp', '/images/shoes-sneakers-3.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924662/shoes-sneakers-1_zdxxce.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924663/shoes-sneakers-2_b0j2ug.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924665/shoes-sneakers-3_s4rik8.webp',
+    ],
     sizes: [
       { size: Size.XXS, stock: 5 },
       { size: Size.XS, stock: 8 },
@@ -616,7 +674,10 @@ export const products = [
     category: 'shoes',
     price: 7990,
     oldPrice: 11990,
-    images: ['/images/shoes-booties-1.webp', '/images/shoes-booties-2.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924657/shoes-booties-2_bcclwy.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924657/shoes-booties-1_mrd0ot.webp',
+    ],
     sizes: [
       { size: Size.XXS, stock: 3 },
       { size: Size.XS, stock: 5 },
@@ -642,7 +703,10 @@ export const products = [
     category: 'bags',
     price: 2990,
     oldPrice: 4990,
-    images: ['/images/bag-shopper-1.webp', '/images/bag-shopper-2.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924730/bag-shopper-1_mkcdp4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924731/bag-shopper-2_a3lwb7.webp',
+    ],
     sizes: [{ size: Size.ONESIZE, stock: 5 }],
     color: { id: 6, name: 'Кофейный', hex: '#B5937B' },
     composition: 'экокожа 100%',
@@ -661,7 +725,10 @@ export const products = [
     category: 'bags',
     price: 1490,
     oldPrice: 2490,
-    images: ['/images/belt-leather-1.webp', '/images/belt-leather-2.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924734/belt-leather-1_hvlubv.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924736/belt-leather-2_ycj2ds.webp',
+    ],
     sizes: [{ size: Size.ONESIZE, stock: 10 }],
     color: { id: 1, name: 'Чёрный', hex: '#000000' },
     composition: 'натуральная кожа 100%',
@@ -681,7 +748,10 @@ export const products = [
     category: 'skirt',
     price: 3290,
     oldPrice: 4990,
-    images: ['/images/skirt-pleated-1.webp', '/images/skirt-pleated-2.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924791/skirt-pleated-1_nrabq8.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924792/skirt-pleated-2_f014ik.webp',
+    ],
     sizes: [
       { size: Size.XXS, stock: 4 },
       { size: Size.XS, stock: 6 },
@@ -707,10 +777,10 @@ export const products = [
     price: 2590,
     oldPrice: 3990,
     images: [
-      '/images/skirt-denim-1.webp',
-      '/images/skirt-denim-2.webp',
-      '/images/skirt-denim-3.webp',
-      '/images/skirt-denim-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924782/skirt-denim-1_ypbzy3.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924783/skirt-denim-2_qmwklz.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924788/skirt-denim-3_ppwqs9.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924789/skirt-denim-4_evidfp.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 5 },
@@ -737,7 +807,11 @@ export const products = [
     category: 'swimming',
     price: 3990,
     oldPrice: 5990,
-    images: ['/images/swimsuit-bikini-1.webp', '/images/swimsuit-bikini-2.webp', '/images/swimsuit-bikini-3.webp'],
+    images: [
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924847/swimsuit-bikini-1_yjttif.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924849/swimsuit-bikini-2_kvb3mz.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924907/swimsuit-bikini-3_peszy5.webp',
+    ],
     sizes: [
       { size: Size.XS, stock: 4 },
       { size: Size.S, stock: 6 },
@@ -762,10 +836,10 @@ export const products = [
     price: 4590,
     oldPrice: 6990,
     images: [
-      '/images/swimsuit-one-piece-1.webp',
-      '/images/swimsuit-one-piece-2.webp',
-      '/images/swimsuit-one-piece-3.webp',
-      '/images/swimsuit-one-piece-4.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924909/swimsuit-one-piece-1_c25ng8.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924911/swimsuit-one-piece-2_ltlqze.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924912/swimsuit-one-piece-3_virwuz.webp',
+      'https://res.cloudinary.com/dkni6have/image/upload/v1778924914/swimsuit-one-piece-4_l8wggg.webp',
     ],
     sizes: [
       { size: Size.XXS, stock: 3 },
