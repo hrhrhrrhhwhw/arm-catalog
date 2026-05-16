@@ -15,7 +15,7 @@ export default function CartPage() {
   if (isLoading) return <Loading />
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full px-2">
       <h2 className="mb-5 px-2 text-xl font-semibold text-primary md:text-2xl">Корзина</h2>
       <div className="mb-5 px-2">
         Сумма заказа: <span className="text-lg font-bold text-primary">{total.toLocaleString('ru-RU')}</span> рублей

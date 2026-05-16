@@ -28,10 +28,12 @@ export default function CartItemCard({ item }: Props) {
             </Link>
 
             <span className="text-sm text-muted-foreground">Размер: {item.size}</span>
-
           </div>
 
-          <span className="mb-5">{item.price} ₽</span>
+          <div className='flex flex-col h-10'>
+            <span>{item.price} ₽</span>
+            {isMaxStockReached && <div className="text-xs text-destructive">Больше нет</div>}
+          </div>
 
           <div className="flex w-full justify-between">
             <div className="flex items-center gap-5">
@@ -63,7 +65,6 @@ export default function CartItemCard({ item }: Props) {
                 +
               </Button>
             </div>
-                {isMaxStockReached && <div className="mt-1 text-xs text-destructive">Больше нет</div>}
             <div>
               <Button
                 onClick={() =>

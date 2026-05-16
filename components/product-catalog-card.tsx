@@ -88,6 +88,8 @@ export default function ProductCatalogCard({ product }: ProductCardProps) {
               src={src}
               alt={product.name}
               fill
+              priority={false}
+              loading="lazy"
               className={cn(
                 'object-cover transition-opacity duration-200',
                 index === activeIndex ? 'opacity-100' : 'opacity-0'

@@ -1,3 +1,5 @@
+
+
 import ProductCatalogCard from '@/components/product-catalog-card'
 import BreadCrumbs from '@/components/breadcrumbs'
 import FilterColor from '@/components/Filters/filter-color'
