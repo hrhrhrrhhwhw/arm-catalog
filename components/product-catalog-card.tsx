@@ -76,7 +76,7 @@ export default function ProductCatalogCard({ product }: ProductCardProps) {
         </Toggle>
       </div>
 
-      <Link href={`/product/${product.slug}`} className="block">
+      <Link prefetch href={`/product/${product.slug}`} className="block">
         <div
           className="relative aspect-3/4 overflow-hidden bg-neutral-100"
           onTouchStart={handleTouchStart}

@@ -1,10 +1,12 @@
-import { cache } from 'react'
+import { cacheLife } from 'next/cache'
 import prisma from '../prisma'
 import { ProductCard } from '../types'
 
 type SortPrice = 'price_asc' | 'price_desc'
 
-export const getCatalogProducts = cache(async (category?: string, color?: string, price?: SortPrice) => {
+export const getCatalogProducts = async (category?: string, color?: string, price?: SortPrice) => {
+  'use cache'
+  cacheLife('hours')
   const colors = color?.split(',').filter(Boolean)
 
   const products = await prisma.product.findMany({
@@ -70,6 +72,6 @@ export const getCatalogProducts = cache(async (category?: string, color?: string
   }))
 
   return mappedProducts
-})
+}
 
 export default getCatalogProducts

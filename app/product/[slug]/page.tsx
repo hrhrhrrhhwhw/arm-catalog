@@ -1,5 +1,3 @@
-export const revalidate = 60
-
 import BreadCrumbs from '@/components/breadcrumbs'
 import ProductDescription from '@/components/Product/product-description'
 import ProductGallery from '@/components/Product/product-gallery'
@@ -15,6 +13,7 @@ interface ProductProps {
 }
 
 export default async function ProductPage({ params }: ProductProps) {
+
   const { slug } = await params
   const product = await getProduct(slug)
 

@@ -1,6 +1,9 @@
+import { cacheLife } from 'next/cache'
 import prisma from '../prisma'
 
 export default async function getProduct(slug?: string) {
+  'use cache'
+  cacheLife('hours')
   const product = await prisma.product.findUnique({
     where: {
       slug: slug,
